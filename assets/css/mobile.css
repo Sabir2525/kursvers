@@ -1,0 +1,123 @@
+@media (max-width: 576px) {
+    .container {
+        max-width: 518px;
+    }
+
+    .tit {
+        display: none;
+    }
+
+    .catalog_cards {
+        justify-content: center;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* каталог */
+    .search input {
+        padding: 12px 70px 12px 12px;
+        background-color: #EDEDED;
+    }
+
+    .catalog_cards .card img{
+        width: 220px;
+    }
+
+    .catalog_cards .card h3 {
+        font-size: 11px;
+    }
+
+    .catalog_cards .card p {
+        font-weight: 700;
+        font-size: 13px;
+    }
+    /* карточка */
+    .cardic{
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .cardic .card_img img{
+        max-width: 518px;
+    }
+    /* корзина */
+    .shop_card {
+        width: 518px;
+        padding: 15px;
+    }
+
+    .shop_card_tit{
+        gap: 40px;
+        margin-right: 100px;
+    }
+
+    .hre a{
+        font-size: 12px;
+    }
+}
+
+
+
+.burger-label {
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.burger-label span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.burger-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Скрыто по умолчанию */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s;
+    z-index: 999;
+}
+
+.burger-menu img {
+    width: 133px;
+}
+
+.burger-menu a {
+    display: block;
+    padding: 10px 0;
+    color: white;
+    text-decoration: none;
+}
+
+.burger-menu a:hover {
+    background-color: #444;
+    /* Цвет при наведении */
+}
+
+.burger-menu.active {
+    left: 0;
+    /* Показываем меню при активации */
+}
+
+@media screen and (min-width: 576px) {
+    .burger-label {
+        display: none;
+        /* Скрываем бургер-кнопку на больших экранах */
+    }
+}
+
+/*  */
+
