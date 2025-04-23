@@ -142,6 +142,10 @@ section{
     margin-top: 120px;
 }
 
+.catalog1{
+    display: none;
+}
+
 .catalog h2{
     margin-bottom: 35px;
 }
@@ -167,7 +171,7 @@ section{
 }
 
 .catalog_cards .card_tit{
-    height: 130px;
+    height: 145px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -235,6 +239,84 @@ section{
     background: none;
 }
 /*  */
+.catalog1{
+    display: none;
+    margin-top: 120px;
+}
+
+.catalog1 h2{
+    margin-bottom: 35px;
+}
+
+.filtr{
+    display: flex;
+    gap: 40px;
+}
+
+.filtr button{
+    background: none;
+    font-size: 20px;
+}
+
+.catalog_cards{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.catalog_cards .card{
+    margin-top: 35px;
+}
+
+.catalog_cards .card_tit{
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.catalog_cards .card img{
+    width: 370px;
+}
+
+.catalog_cards .card h3{
+    margin-top: 20px;
+    color: #373535;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.catalog_cards .card p{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.catalog_cards .card .price{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.catalog1 .btn1{
+    background-color: #937971;
+    border: none;
+    color: white;
+    padding: 7px 10px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    border: 2px solid rgba(128, 128, 128, 0);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.catalog1 .btn1 span{
+    color: white;
+    font-size: 20px;
+}
+/*  */
 /*  */
 
 .contact{
@@ -242,6 +324,7 @@ section{
     margin-bottom: 120px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .contact_img img{
@@ -266,6 +349,7 @@ section{
 /*  */
 
 footer{
+    width: 100%;
     padding-top: 60px;
     padding-bottom: 10px;
     background-color: #937971;
@@ -334,6 +418,16 @@ footer .butor .btn{
     margin-top: 100px;
     margin-bottom: 120px;
 }
+
+.sliders{
+    display: flex;
+} 
+
+.cardic #nextBtn{
+    margin-left: 40px;   
+}
+
+
 
 .card_img img{
     width: 600px;

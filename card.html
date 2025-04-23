@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="assets/img/logo/logootd.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/planshet.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/mobilemin.css">
 </head>
 
 <body>
@@ -52,7 +53,7 @@
                     span.classList.toggle('active');
                 }
             });
-            </script>
+        </script>
     </header>
     <!--  -->
     <div class="search container">
@@ -63,7 +64,29 @@
         <input type="text" placeholder="поиск">
     </div>
     <div class="cardic container">
-        <div class="card_img"><img src="assets/img/catalog/icon1.png" alt=""></div>
+        <div class="sliders">
+            <div class="card_img slide"><img src="assets/img/catalog/icon1.png" alt=""></div>
+            <div class="card_img slide"><img src="assets/img/catalog/icon2.png" alt=""></div>
+            <div class="card_img slide"><img src="assets/img/catalog/icon3.png" alt=""></div>
+            <button id="nextBtn">></button>
+        </div>
+        <script>
+            const slides = document.querySelectorAll('.slide')
+            let currentIndex = 0
+            slides[currentIndex].classList.add('active')
+
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                slides[currentIndex].classList.remove('active')
+
+                if (currentIndex === slides.length - 1) {
+                    currentIndex = 0
+                } else {
+                    currentIndex++
+                }
+
+                slides[currentIndex].classList.add('active')
+            })
+        </script>
         <div class="card_tit">
             <h3>Tonka Perfumes Moscow</h3>
             <div class="art">
@@ -73,7 +96,8 @@
                 <p>Характеристики</p>
                 <p><span>группа ароматов................</span> древесные, фруктовые</p>
                 <p><span>верхние ноты................</span> красный виноград, черная смородина, бергамот</p>
-                <p><span>средние ноты................</span> фиалка, жасмин, кедр, иланг-иланг, ветивер, черный перец</p>
+                <p><span>средние ноты................</span> фиалка, жасмин, кедр, иланг-иланг, ветивер, черный перец
+                </p>
                 <p><span>объём................</span> 220 мл</p>
             </div>
             <div class="price">

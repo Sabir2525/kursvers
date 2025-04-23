@@ -17,7 +17,26 @@
         gap: 30px;
     }
 
+    .contact_img img{
+        width: 390px;
+    }
+
+    .filtr{
+        flex-wrap: wrap;
+    }
+
+    .soc{
+        gap: 30px;
+    }
+
     /* каталог */
+    .catalog{
+        display: none;
+    }
+
+    .catalog1{
+        display: block;
+    }
     .search input {
         padding: 12px 70px 12px 12px;
         background-color: #EDEDED;
@@ -35,6 +54,13 @@
         font-weight: 700;
         font-size: 13px;
     }
+
+    .filtr{
+        margin-top: 60px;
+        gap: 30px;
+    }
+
+    
     /* карточка */
     .cardic{
         flex-direction: column;

@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="assets/img/logo/logootd.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/planshet.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/mobilemin.css">
 </head>
 
 <body>
@@ -65,6 +66,8 @@
     </div>
     <!--  -->
 
+    <!--  -->
+    <!--  -->
     <div class="catalog container">
         <h2>Каталог</h2>
         <div class="filtr">
@@ -73,8 +76,64 @@
             <button>Арома</button>
             <button>Скидки</button>
         </div>
-        <h1>НЕ ПОНИМАЮ КАК СДЕЛАТЬ ЧТОБЫ СЛАЙДЕР БЫЛ ТОЛЬКО В МОБИЛКЕ...</h1>
-        <div class="catalog_cards slider">
+        <div class="catalog_cards">
+            <div class="slide1">
+                <div class="card">
+                    <img src="assets/img/catalog/icon1.png" alt="">
+                    <div class="card_tit">
+                        <h3>Tonka Perfumes Moscow</h3>
+                        <div class="price">
+                            <p>18 000₽</p>
+                            <button class="btn">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide1">
+                <div class="card">
+                    <img src="assets/img/catalog/icon2.png" alt="">
+                    <div class="card_tit">
+                        <h3>12 Legends Taiga</h3>
+                        <div class="price">
+                            <p>20 000₽</p>
+                            <button class="btn">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide1">
+                <div class="card">
+                    <img src="assets/img/catalog/icon3.png" alt="">
+                    <div class="card_tit">
+                        <h3>ESSENTIAL PARFUMS PARIS ORANGE X <br> SANTAL by Natalie Gracia-Cetto</h3>
+                        <div class="price">
+                            <p>22 000₽</p>
+                            <button class="btn">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center>
+            <a href="catalog.html">
+                <button class="btn1">Перейти в каталог <span>→</span></button>
+            </a>
+        </center>
+    </div>
+
+    <!--  -->
+    <!--  -->
+
+    <div class="catalog1 container">
+        <h2>Каталог</h2>
+        <div class="filtr">
+            <button style="background-color: #937971; color: white; padding: 13px 29px;">Все</button>
+            <button>Без запаха</button>
+            <button>Арома</button>
+            <button>Скидки</button>
+        </div>
+
+        <div class="catalog_cards">
             <div class="slide">
                 <div class="card">
                     <img src="assets/img/catalog/icon1.png" alt="">
@@ -111,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            <button id ="nextBtn" >></button>
+            <button id="nextBtn">></button>
         </div>
 
         <script>
@@ -130,8 +189,6 @@
 
                 slides[currentIndex].classList.add('active')
             })
-
-            
         </script>
         <center>
             <a href="catalog.html">

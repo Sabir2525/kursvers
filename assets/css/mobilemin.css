@@ -1,0 +1,34 @@
+@media (max-width: 400px) {
+    .container {
+        max-width: 351px;
+    }
+
+    .banner{
+        height: 300px;
+    }
+
+    .ban_tit{
+        height: 300px;
+    }
+
+    .ban_tit h1 {
+        font-size: 30px;
+    }
+
+    .contact_img img{
+        width: 350px;
+    }
+
+    .soc{
+        gap: 10px;
+    }
+
+    .catalog2 .catalog_cards{
+        justify-content: center;
+    }
+
+    .filtr{
+        margin-top: 60px;
+        gap: 10px;
+    }
+}
