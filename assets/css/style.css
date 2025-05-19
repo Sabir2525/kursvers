@@ -175,6 +175,7 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 370px;
 }
 
 .catalog_cards .card img{
@@ -273,6 +274,7 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 370px;
 }
 
 .catalog_cards .card img{

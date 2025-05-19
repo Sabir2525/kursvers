@@ -13,48 +13,15 @@
 </head>
 
 <body>
-    <header>
-        <section class="container">
-            <div class="logo">
-                <img src="assets/img/logo/logo1.png" alt="">
-            </div>
-            <div class="tit">
-                <p>+7 999 999 99 99</p>
-                <p>г. Казань, Гвардейская 18</p>
-            </div>
-            <div class="butor">
-                <a href="shop.html">
-                    <img src="assets/img/header/Group5.png" alt="">
-                </a>
-                <a href="auto.html">
-                    <button class="btn"><img src="assets/img/header/Group3.png" alt="">Личный кабинет</button>
-                </a>
-            </div>
-            <div class="burger-label" id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </section>
-        <nav class="burger-menu" id="navMenu">
-            <img src="assets/img/logo/logo1.png" alt="">
-            <a href="catalog.html">Каталог</a>
-            <a href="#">Личный кабинет</a>
-            <a href="shop.html">Корзина</a>
-            <a href="#Контакты">Контакты</a>
-        </nav>
-        <script>const burger = document.getElementById('burger');
-            const navMenu = document.getElementById('navMenu');
-            burger.addEventListener('click', () => {
-                // Переключаем класс active для навигации
-                navMenu.classList.toggle('active');
-                // Меняем цвет бургер-меню при открытии
-                for (const span of burger.children) {
-                    span.classList.toggle('active');
-                }
-            });
-        </script>
-    </header>
+<?php
+$id = $_GET['id'];
+$product = $database->query("SELECT * FROM products WHERE id = $id")->fetch();
+if(!$product){
+    include('404.php');
+    exit;
+}
+?>
+   
     <!--  -->
     <div class="search container">
         <div class="hr">
@@ -64,8 +31,8 @@
         <input type="text" placeholder="поиск">
     </div>
     <div class="cardic container">
-        <div class="sliders">
-            <div class="card_img slide"><img src="assets/img/catalog/icon1.png" alt=""></div>
+        <div class="sliders">   
+            <div class="card_img slide"><img src="./uploads/<?= $product['image']?>" alt=""></div>
             <div class="card_img slide"><img src="assets/img/catalog/icon2.png" alt=""></div>
             <div class="card_img slide"><img src="assets/img/catalog/icon3.png" alt=""></div>
             <button id="nextBtn">></button>
@@ -88,20 +55,21 @@
             })
         </script>
         <div class="card_tit">
-            <h3>Tonka Perfumes Moscow</h3>
+            <h3><?= $product['title'] ?></h3>
             <div class="art">
                 <p>Артикулk-38570347</p>
             </div>
             <div class="description">
-                <p>Характеристики</p>
+            <?= $product['description'] ?>
+                <!-- <p>Характеристики</p>
                 <p><span>группа ароматов................</span> древесные, фруктовые</p>
                 <p><span>верхние ноты................</span> красный виноград, черная смородина, бергамот</p>
                 <p><span>средние ноты................</span> фиалка, жасмин, кедр, иланг-иланг, ветивер, черный перец
                 </p>
-                <p><span>объём................</span> 220 мл</p>
+                <p><span>объём................</span> 220 мл</p> -->
             </div>
             <div class="price">
-                <p>18 000₽</p>
+                <p><?= $product['price'] . '₽'?></p>
                 <div class="but">
                     <button class="btn">Купить сейчас</button>
                     <a href="shop.html"><button class="btn" style="background-color: #937971;">В корзину</button></a>

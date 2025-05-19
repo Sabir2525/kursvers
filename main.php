@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,48 +17,7 @@
 </head>
 
 <body>
-    <header>
-        <section class="container">
-            <div class="logo">
-                <img src="assets/img/logo/logo1.png" alt="">
-            </div>
-            <div class="tit">
-                <p>+7 999 999 99 99</p>
-                <p>г. Казань, Гвардейская 18</p>
-            </div>
-            <div class="butor">
-                <a href="shop.html">
-                    <img src="assets/img/header/Group5.png" alt="">
-                </a>
-                <a href="auto.html">
-                    <button class="btn"><img src="assets/img/header/Group3.png" alt="">Личный кабинет</button>
-                </a>
-            </div>
-            <div class="burger-label" id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </section>
-        <nav class="burger-menu" id="navMenu">
-            <img src="assets/img/logo/logo1.png" alt="">
-            <a href="catalog.html">Каталог</a>
-            <a href="reg.html">Личный кабинет</a>
-            <a href="shop.html">Корзина</a>
-            <a href="#Контакты">Контакты</a>
-        </nav>
-        <script>const burger = document.getElementById('burger');
-            const navMenu = document.getElementById('navMenu');
-            burger.addEventListener('click', () => {
-                // Переключаем класс active для навигации
-                navMenu.classList.toggle('active');
-                // Меняем цвет бургер-меню при открытии
-                for (const span of burger.children) {
-                    span.classList.toggle('active');
-                }
-            });
-        </script>
-    </header>
+
 
     <!--  -->
     <div class="banner">
@@ -76,46 +39,33 @@
             <button>Арома</button>
             <button>Скидки</button>
         </div>
+        <?php
+            $products = $database->query("SELECT * FROM products")->fetchAll();
+            ?>
+        <?php if (!empty($products)): ?>
+               
         <div class="catalog_cards">
+        <?php foreach ($products as $product):
+                ?>
             <div class="slide1">
                 <div class="card">
-                    <img src="assets/img/catalog/icon1.png" alt="">
+                <img src="./uploads/<?= $product['image'] ?>" alt="">
                     <div class="card_tit">
-                        <h3>Tonka Perfumes Moscow</h3>
+                        <h3><?= $product['title'] ?></h3>
                         <div class="price">
-                            <p>18 000₽</p>
-                            <button class="btn">В корзину</button>
+                            <p><?= $product['price'] . '₽' ?></p>
+                            <a href="./?page=card&id=<?= $product['id'] ?>"><button class="btn" >В корзину</button></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="slide1">
-                <div class="card">
-                    <img src="assets/img/catalog/icon2.png" alt="">
-                    <div class="card_tit">
-                        <h3>12 Legends Taiga</h3>
-                        <div class="price">
-                            <p>20 000₽</p>
-                            <button class="btn">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide1">
-                <div class="card">
-                    <img src="assets/img/catalog/icon3.png" alt="">
-                    <div class="card_tit">
-                        <h3>ESSENTIAL PARFUMS PARIS ORANGE X <br> SANTAL by Natalie Gracia-Cetto</h3>
-                        <div class="price">
-                            <p>22 000₽</p>
-                            <button class="btn">В корзину</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
+            <?php else: ?>
+                <p>Товаров нет</p>
+            <?php endif; ?>
         </div>
         <center>
-            <a href="catalog.html">
+            <a href="catalog.php">
                 <button class="btn1">Перейти в каталог <span>→</span></button>
             </a>
         </center>
@@ -191,7 +141,7 @@
             })
         </script>
         <center>
-            <a href="catalog.html">
+            <a href="./?page=catalog">
                 <button class="btn1">Перейти в каталог <span>→</span></button>
             </a>
         </center>
